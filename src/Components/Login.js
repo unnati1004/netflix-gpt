@@ -47,8 +47,7 @@ const Login = () => {
           }).catch((error) => {
             setErrMessage(error);
           });          
-          console.log(user);
-
+          
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -64,8 +63,6 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log(user);
-          navigate("/")
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -113,7 +110,7 @@ const Login = () => {
         <button
           className="p-4 text-2xl bg-red-700 w-full my-4 rounded-lg"
           onClick={() => {
-            handleButtonClick();
+            handleButtonClick()
           }}
         >
           {isSignForm ? "Sign In" : "Sign Up"}
